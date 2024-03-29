@@ -1,0 +1,68 @@
+@use "../variables.scss"
+.code
+  width: 100%
+  height: 100vh
+  background-color: variables.$primary-color
+
+.loginContainer
+  width: 294px
+  height: 118px
+  background-color: variables.$loginContainer-bk
+  margin-top: 15px
+  padding-top: 28px
+  border-color: variables.$border-color-login
+  border-radius: variables.$border-radius-type02
+
+  input
+    //width: 225px
+    //height: 26px
+    border-radius: variables.$border-radius-type02
+    border-color: variables.$border-color-login
+    background-color: aliceblue
+    margin-bottom: 10px
+    padding-inline-start: 9px
+    padding-top: 2px
+
+.unlockIn
+  opacity: 0%
+
+.pAjustes
+  p
+    font-size: .8rem
+    margin: 1rem 0.4rem
+
+.autorizarLogin
+  :first-child
+    position: relative
+    animation-timing-function: ease
+    animation-name: fadeOut
+    animation-iteration-count: infinite
+    animation-fill-mode: forwards
+    animation-duration: 3s
+  :nth-child(2)
+    position: relative
+    animation-timing-function: ease
+    animation-name: fadeIn
+    animation-iteration-count: infinite
+    animation-fill-mode: forwards
+    animation-delay: 0.1s
+    animation-duration: 3s
+  @keyframes fadeOut
+    0%
+      left: 0
+    75%
+      left: 75px
+      opacity: 0%
+    100%
+      opacity: 0%
+      left: 100px
+  @keyframes fadeIn
+    0%
+      opacity: 0%
+      left: 0px
+    25%
+      opacity: 10%
+    100%
+      opacity: 100%
+      left: 170px
+

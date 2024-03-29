@@ -1,0 +1,31 @@
+@import "bootstrap/scss/functions.scss";
+@import "bootstrap/scss/variables.scss";
+@import "bootstrap/scss/mixins.scss";
+@import "bootstrap/scss/bootstrap.scss";
+@import "bootstrap/scss/bootstrap-grid.scss";
+
+
+// COLOR FROM SELECTED ITEMS
+//backgrounds
+$primary-color: rgba(11,23,38,255);
+$secondary-color-bg: rgba(17,29,64,255);
+$blue-color-bg: rgba(3,140,140,255);
+$blue-light-color-bg: rgba(19,242,242,255);
+$white-color-bg: rgba(242,242,242,255);
+
+
+
+// Links
+
+
+
+//Global
+$border-radius-type01: 11px;
+$border-radius-type02: 13px;
+$border-radius-type03: 18px;
+$border-radius-type04: 50px;
+
+
+//Login
+$loginContainer-bk: rgba(242, 242, 242, 255);
+$border-color-login: rgb(255, 255, 255);

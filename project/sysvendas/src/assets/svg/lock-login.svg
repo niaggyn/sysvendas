@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="60.476" height="70.529" viewBox="0 0 76.476 84.529">
+  <g id="Grupo_58" data-name="Grupo 58" transform="translate(-29.262 -77.735)">
+    <g id="Grupo_57" data-name="Grupo 57">
+      <g id="Componente_2_1" data-name="Componente 2 – 1" transform="translate(31.262 79.735)">
+        <g id="Icon_feather-lock" data-name="Icon feather-lock">
+          <path id="Caminho_35" data-name="Caminho 35" d="M12.553,16.5H68.923a8.053,8.053,0,0,1,8.053,8.053V52.738a8.053,8.053,0,0,1-8.053,8.053H12.553A8.053,8.053,0,0,1,4.5,52.738V24.553A8.053,8.053,0,0,1,12.553,16.5Z" transform="translate(-4.5 19.738)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+          <path id="Caminho_36" data-name="Caminho 36" d="M10.5,39.238V23.132a20.132,20.132,0,0,1,40.265,0V39.238" transform="translate(5.606 -3)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+        </g>
+        <g id="Grupo_56" data-name="Grupo 56" transform="translate(-31.262 -79.735)">
+          <g id="Retângulo_80" data-name="Retângulo 80" transform="translate(55.833 129.661) rotate(-45)" fill="#fff" stroke="#fff" stroke-linecap="round" stroke-linejoin="bevel" stroke-width="2">
+            <rect width="4" height="29" stroke="none"/>
+            <rect x="1" y="1" width="2" height="27" fill="none"/>
+          </g>
+          <g id="Retângulo_81" data-name="Retângulo 81" transform="translate(58.661 150.167) rotate(-135)" fill="#fff" stroke="#fff" stroke-linecap="round" stroke-linejoin="bevel" stroke-width="2">
+            <rect width="4" height="29" stroke="none"/>
+            <rect x="1" y="1" width="2" height="27" fill="none"/>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
