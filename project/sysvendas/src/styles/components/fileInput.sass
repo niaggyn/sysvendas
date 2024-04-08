@@ -1,17 +1,18 @@
 @use "../variables.scss"
-//@use "../../assets/svg/search.svg"
 
 
 .input
-  background: url("../../assets/svg/search.svg") no-repeat 10px 7px
+  background: url("../../assets/svg/search.svg") no-repeat 10px 5px
   height: 40px
   width: 250px
   text-align: right
   border-color: transparent
-  border-radius: variables.$border-radius-type04 !important
-  box-shadow: 1px 5px rgb(183, 179, 179)
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16)
   justify-content: center
   padding-right: 15px
+
+.selectDefault
+  background-color: variables.$blue-color-bg !important
 
 
 .input:focus
@@ -19,6 +20,7 @@
   border: none !important
 
 .buttonSearch
+  width: auto
   background: transparent
-  margin-left: 10px
+  margin-left: 5px
   border: none

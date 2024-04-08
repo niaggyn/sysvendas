@@ -76,10 +76,6 @@ const SalesBudgetTable = () => {
                 <td>{line.Descricao}</td>
                 <td>{line.Valor}</td>
                 <td>{line.Quantidade}</td>
-
-                {/*{sales ? Type(true)
-                        : Type(false)
-                }*/}
                 <td>
                   <button
                       onClick={() => setValueMinus(line.ID)}

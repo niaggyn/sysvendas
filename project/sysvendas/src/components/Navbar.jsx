@@ -17,18 +17,6 @@ const Navbar = () => {
   return (
       <section className="d-flex">
         <nav className="d-block navContainer position-absolute start-0">
-          {/*<ul className="list-unstyled text-white m-0 justify-content-start p-0 w-100 ">
-            <li className="d-inline-flex list-group-item align-items-center justify-content-start w-100">
-              <img src={home} className="m-2"/>
-              <Link to="/">Home</Link>
-            </li>
-          </ul>
-          <ul className="list-unstyled text-white m-0 justify-content-start p-0 w-100">
-            <li className="d-inline-flex list-group-item align-items-center justify-content-start w-100 ">
-              <img src={sales} className="m-2"/>
-              <Link to="/sales">Vendas</Link>
-            </li>
-          </ul>*/}
           {menuItem.map((item,indice)=>(
               <ul key={indice}
                   className="list-unstyled text-white m-0 justify-content-start p-0 w-100 "

@@ -84,8 +84,8 @@ const SalesHistoryTable = () => {
             <h3 className="p-0 mb-0 w-auto">R$ 000,00</h3>
           </div>
           <div className="total d-block align-self-baseline position-absolute start-0 translate-middle-y">
-            <p className="mb-0 fs-6">Detalhes: </p>
-            <div className="d-flex justify-content-between fw-bold">
+            <p className="mb-0 textSizeSm">Detalhes: </p>
+            <div className="d-flex justify-content-between fw-semibold">
               <p className="mb-0">Crédito</p>
               <p className="mb-0">3X</p>
               <p className="fst-italic mb-0">100,00</p>

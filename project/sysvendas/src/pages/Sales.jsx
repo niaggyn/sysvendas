@@ -22,17 +22,17 @@ const Sales = () => {
           <CollabInfo/>
         </div>
         <div className="d-flex container mt-3 p-2">
-          <button className="btn fw-bold border border-2 rounded button1 text-start p-2 justify-content-center"
+          <button className="btn btn-sm fw-medium border border-2 rounded button1 text-start p-2 justify-content-center"
                   onClick={handleSalesFunctions}
           >
             <Link to="/sales/budgetSales">Orçamento</Link>
           </button>
-          <button className="btn fw-bold border border-2 rounded button2 text-start p-2 "
+          <button className="btn btn-sm fw-medium border border-2 rounded button2 text-start p-2 "
                   onClick={handleSalesFunctions}
           >
             <Link to="/sales/historySales">Histórico</Link></button>
         </div>
-        <div className="route w-100 min-vh-100 Sales">
+        <div className="route w-100 min-vh-100 Sales ">
           <Outlet/>
         </div>
       </section>

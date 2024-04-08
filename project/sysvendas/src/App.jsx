@@ -26,7 +26,7 @@ const App = () => {
                     </div>
                 </div>
                 <div className="bar">|</div>
-                <div className="route container-fluid w-100 content border border-3 rounded m-2">
+                <div className="route container-fluid w-100 content border-0 rounded m-2">
                     <Routes>
                         <Route exact path="/" element={<Dashboard/>}></Route>
                         <Route exact path="/sales" element={<Sales/>}>
