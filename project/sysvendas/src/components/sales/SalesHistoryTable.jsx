@@ -1,8 +1,10 @@
 import "../../styles/components/table.sass"
+
 import info from "../../assets/svg/info.svg"
 import {useState} from "react";
+import SaleResume from "./SaleResume.jsx";
 
-const SalesHistoryTable = () => {
+const SalesHistoryTable = ({resume,detail}) => {
 
   //objeto
   const [line, setLine] = useState([
@@ -44,7 +46,7 @@ const SalesHistoryTable = () => {
 
   return (
       <section className="tableContainer position-relative">
-        <table className="table table-hover table-sm text-nowrap ">
+        <table className="table table-hover table-sm text-nowrap h-auto">
           <thead>
           <tr>
             <th scope="col"></th>
@@ -78,21 +80,10 @@ const SalesHistoryTable = () => {
 
           </tbody>
         </table>
-        <div className="container d-flex align-items-baseline">
-          <div className="total d-inline-flex align-items-end position-absolute end-0 translate-middle-y  w-auto gap-2">
-            <p className="mb-0">Valor Total: </p>
-            <h3 className="p-0 mb-0 w-auto">R$ 000,00</h3>
-          </div>
-          <div className="total d-block align-self-baseline position-absolute start-0 translate-middle-y">
-            <p className="mb-0 textSizeSm">Detalhes: </p>
-            <div className="d-flex justify-content-between fw-semibold">
-              <p className="mb-0">Crédito</p>
-              <p className="mb-0">3X</p>
-              <p className="fst-italic mb-0">100,00</p>
-              <p className="mb-0">cartao</p>
-            </div>
-          </div>
-        </div>
+        {resume ?
+            <SaleResume details={detail}/>
+            :
+            <></>}
       </section>
   )
 }

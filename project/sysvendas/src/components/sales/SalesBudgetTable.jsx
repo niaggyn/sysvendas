@@ -97,13 +97,12 @@ const SalesBudgetTable = () => {
                 </td>
               </tr>
           ))}
-
           </tbody>
         </table>
-        <div className="container d-flex align-items-baseline">
-          <div className="total d-inline-flex align-items-end position-absolute end-0 translate-middle-y  w-auto gap-2">
-            <p className="mb-0">Valor Total: </p>
-            <h3 className="p-0 mb-0 w-auto">R$ {calcTotalGeral()}</h3>
+        <div className="container d-flex align-items-baseline justify-content-end">
+          <div className="total d-inline-flex align-items-end gap-2 justify-content-between">
+            <p className="mb-0 textSizeSm">Valor Total: </p>
+            <p className="p-0 mb-0 w-auto fs-5 fw-semibold">R$ {calcTotalGeral()}</p>
           </div>
         </div>
       </section>

@@ -10,6 +10,7 @@ import SalesHistory from "./components/sales/SalesHistory.jsx";
 import Service from "./pages/Service.jsx";
 import ServiceBudget from "./components/service/ServiceBudget.jsx";
 import ServiceHistory from "./components/service/ServiceHistory.jsx";
+import Clients from "./pages/Clients.jsx";
 
 
 const App = () => {
@@ -26,7 +27,7 @@ const App = () => {
                     </div>
                 </div>
                 <div className="bar">|</div>
-                <div className="route container-fluid w-100 content border-0 rounded m-2">
+                <div className="route container-fluid w-100 content border-0 rounded m-2 overflow-auto">
                     <Routes>
                         <Route exact path="/" element={<Dashboard/>}></Route>
                         <Route exact path="/sales" element={<Sales/>}>
@@ -36,6 +37,9 @@ const App = () => {
                         <Route exact path="/service" element={<Service/>}>
                             <Route index path="budgetService" element={<ServiceBudget/>}/>
                             <Route path="historyService" element={<ServiceHistory/>}/>
+                        </Route>
+                        <Route exact path="/clients" element={<Clients/>}>
+
                         </Route>
                     </Routes>
                 </div>

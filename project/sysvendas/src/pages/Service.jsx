@@ -21,12 +21,12 @@ const Service = () => {
           <CollabInfo/>
         </div>
         <div className="d-flex container mt-3 p-2">
-          <button className="btn fw-bold border border-2 rounded button1 text-start p-2 justify-content-center"
+          <button className="btn btn-sm fw-medium border border-2 rounded button1 text-start p-2 justify-content-center"
                   onClick={handleSalesFunctions}
           >
             <Link to="/service/budgetService">Orçamento</Link>
           </button>
-          <button className="btn fw-bold border border-2 rounded button2 text-start p-2 "
+          <button className="btn btn-sm fw-medium border border-2 rounded button2 text-start p-2 "
                   onClick={handleSalesFunctions}
           >
             <Link to="/service/historyService">Histórico</Link></button>

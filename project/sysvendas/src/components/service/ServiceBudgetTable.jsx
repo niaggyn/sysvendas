@@ -3,8 +3,9 @@ import info from "../../assets/svg/info.svg"
 import minus from "../../assets/svg/minus.svg"
 import plus from "../../assets/svg/plusQuant.svg"
 import {useState} from "react";
+import ServiceResume from "./ServiceResume.jsx";
 
-const ServiceBudgetTable = () => {
+const ServiceBudgetTable = ({detail}) => {
 
   //objeto
   const [line, setLine] = useState([
@@ -99,14 +100,14 @@ const ServiceBudgetTable = () => {
           ))}
 
           </tbody>
-          <div className="container d-flex align-items-baseline">
-            <div
-                className="total d-inline-flex align-items-end position-absolute end-0 translate-middle-y  w-auto gap-2">
-              <p className="mb-0">Valor Total: </p>
-              <h3 className="p-0 mb-0 w-auto">R$ {calcTotalGeral()}</h3>
-            </div>
-          </div>
         </table>
+
+        {detail ?
+          <ServiceResume/>
+            :
+            <></>
+        }
+
 
       </section>
   )

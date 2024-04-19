@@ -1,22 +1,24 @@
 import "../../styles/components/table.sass"
 import info from "../../assets/svg/info.svg"
 import {useState} from "react";
+import SaleResume from "../sales/SaleResume.jsx";
+import ServiceResume from "./ServiceResume.jsx";
 
-const ServiceHistoryTable = () => {
+const ServiceHistoryTable = ({resume,detail}) => {
 
   //objeto
   const [line, setLine] = useState([
     {
       ID: 1,
-      Descricao: "TV",
-      Valor: "1000,00",
-      Quantidade: 100,
+      Servico: "Locação de Andaime",
+      Descricao: "Fornecimento e Instalação de Andames 3m",
+      Valor: "2000,00",
     },
     {
       ID: 2,
-      Descricao: "Notebook",
-      Valor: "3000,00",
-      Quantidade: 50,
+      Servico: "Inspeção Predial",
+      Descricao: "Avaliação das condições técnicas, de uso, operação, manutenção",
+      Valor: "10000,00",
     }
   ]);
 
@@ -78,21 +80,10 @@ const ServiceHistoryTable = () => {
 
           </tbody>
         </table>
-        <div className="container d-flex align-items-baseline">
-          <div className="total d-inline-flex align-items-end position-absolute end-0 translate-middle-y  w-auto gap-2">
-            <p className="mb-0">Valor Total: </p>
-            <h3 className="p-0 mb-0 w-auto">R$ 000,00</h3>
-          </div>
-          <div className="total d-block align-self-baseline position-absolute start-0 translate-middle-y">
-            <p className="mb-0 fs-6">Detalhes: </p>
-            <div className="d-flex justify-content-between fw-bold">
-              <p className="mb-0">Crédito</p>
-              <p className="mb-0">3X</p>
-              <p className="fst-italic mb-0">100,00</p>
-              <p className="mb-0">cartao</p>
-            </div>
-          </div>
-        </div>
+        {resume ?
+            <ServiceResume details={detail}/>
+            :
+            <></>}
       </section>
   )
 }

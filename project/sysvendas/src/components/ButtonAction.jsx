@@ -8,7 +8,7 @@ import "../styles/components/buttonAction.sass"
 const ButtonAction = ({props1, props2, printer}) => {
 
   return (
-      <section className="d-flex justify-content-between">
+      <section className="d-flex justify-content-between mt-3">
         <div>
           {printer ?
               <button className="btn btn-sm d-flex align-items-center border-0 buttonPrinter">
