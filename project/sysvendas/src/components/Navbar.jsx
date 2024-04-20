@@ -12,7 +12,7 @@ const Navbar = () => {
 
   const menuItem = ["Home","Vendas","Serviços","Clientes","Profissional","Agendamentos"];
   const menutItensIcons = [home,sales,services,clients,pro,calendar];
-  const directLink = ["/","/sales","/service","/clients","/","/"];
+  const directLink = ["/","/sales","/service","/clients","/pro","/schedule"];
 
   return (
       <section className="d-flex">

@@ -6,7 +6,7 @@ const DateAndTime = () => {
     let time = moment().format("HH:mm");
 
   return(
-      <div className="time d-block justify-content-end align-items-end position-absolute top-0 end-0">
+      <div className="time d-block justify-content-end">
           <p>{currentDate}</p>
           <h1 className="text-end">{time}</h1>
       </div>

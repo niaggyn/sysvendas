@@ -5,18 +5,20 @@ import Id from "../components/Id.jsx";
 
 const Dashboard = ()=>{
     return(
-        <section>
-            <div>
-                <DateAndTime/>
+        <section className="container m-0 p-0">
+          <div className="d-flex justify-content-between">
+            <div className="d-block justify-content-start m-4">
+              <p className="mb-0">Seja Bem-Vindo</p>
+              <div className="d-flex">
+                <h3>Usuário</h3>
+                <Id/>
+              </div>
             </div>
-            <div className="container-fluid BemVindo ">
-                <p className="mb-0">Seja Bem-Vindo</p>
-                <div className="d-flex">
-                    <h3>Usuário</h3>
-                    <Id/>
-                </div>
+            <div className="justify-content-end">
+              <DateAndTime/>
             </div>
-          <div className="dashboard min-vh-100"></div>
+          </div>
+          <div className="dashboard w-100 min-vh-100"></div>
         </section>
     )
 }

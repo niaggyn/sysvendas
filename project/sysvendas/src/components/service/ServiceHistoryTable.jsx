@@ -51,9 +51,9 @@ const ServiceHistoryTable = ({resume,detail}) => {
           <tr>
             <th scope="col"></th>
             <th scope="col-sm-4">ID</th>
-            <th scope="col">Produto</th>
-            <th scope="col">Valor Un.</th>
-            <th scope="col">Quantidade</th>
+            <th scope="col">Serviço</th>
+            <th scope="col">Data</th>
+            <th scope="col">Valor Unitário</th>
             <th scope="col">Valor Total</th>
           </tr>
           </thead>
@@ -64,14 +64,12 @@ const ServiceHistoryTable = ({resume,detail}) => {
                 <th>{line.ID}</th>
                 <td>{line.Descricao}</td>
                 <td>{line.Valor}</td>
-
                 <td>
                   <input
                       type="number" className="input-group-sm border rounded inputQuant disableInput"
                       disabled
                   />
                 </td>
-
                 <td>
                   R$ Valor Total
                 </td>

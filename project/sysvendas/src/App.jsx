@@ -11,6 +11,8 @@ import Service from "./pages/Service.jsx";
 import ServiceBudget from "./components/service/ServiceBudget.jsx";
 import ServiceHistory from "./components/service/ServiceHistory.jsx";
 import Clients from "./pages/Clients.jsx";
+import Profissional from "./pages/Profissional.jsx";
+import Schedule from "./pages/Schedule.jsx";
 
 
 const App = () => {
@@ -29,7 +31,7 @@ const App = () => {
                 <div className="bar">|</div>
                 <div className="route container-fluid w-100 content border-0 rounded m-2 overflow-auto">
                     <Routes>
-                        <Route exact path="/" element={<Dashboard/>}></Route>
+                        <Route exact path="/" element={<Dashboard/>}/>
                         <Route exact path="/sales" element={<Sales/>}>
                             <Route index path="budgetSales" element={<SalesBudget/>}/>
                             <Route path="historySales" element={<SalesHistory/>}/>
@@ -38,9 +40,9 @@ const App = () => {
                             <Route index path="budgetService" element={<ServiceBudget/>}/>
                             <Route path="historyService" element={<ServiceHistory/>}/>
                         </Route>
-                        <Route exact path="/clients" element={<Clients/>}>
-
-                        </Route>
+                        <Route exact path="/clients" element={<Clients/>}/>
+                        <Route exact path="/pro" element={<Profissional/>}/>
+                        <Route exact path="/schedule" element={<Schedule/>}/>
                     </Routes>
                 </div>
             </section>
