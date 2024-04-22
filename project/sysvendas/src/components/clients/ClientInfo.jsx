@@ -12,7 +12,7 @@ import ClientHistory from "./ClientHistory.jsx";
 const ClientInfo = ({create}) => {
   return (
       <section>
-        <div className="container route border border-0 rounded p-3 m-2 newClient">
+        <div className="container route border border-0 rounded p-3 m-0 newClient">
           {create ?
               <div className="fw-semibold mb-3">
                 Novo Cliente <img src={newUser} alt="Cadastrar novo Cliente"/>

@@ -4,8 +4,6 @@ import "../styles/pages/service.sass"
 
 import CollabInfo from "../components/CollabInfo.jsx";
 import {useState} from "react";
-
-
 const Service = () => {
 
   const [changePage,setChangePage] = useState(true);
@@ -16,7 +14,7 @@ const Service = () => {
   }
 
   return (
-      <section className="container-fluid d-block p-0">
+      <section className="container-fluid d-block p-0 Service">
         <div className="container-fluid p-0">
           <CollabInfo/>
         </div>
@@ -31,7 +29,7 @@ const Service = () => {
           >
             <Link to="/service/historyService">Histórico</Link></button>
         </div>
-        <div className="route w-100 min-vh-100 Service">
+        <div className="route w-100 min-vh-100 ">
           <Outlet/>
         </div>
       </section>

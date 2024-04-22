@@ -5,8 +5,8 @@ import {useState} from "react";
 import FindInput from "../components/FindInput.jsx";
 
 import hist from "../assets/svg/history.svg";
-import edite from "../assets/svg/edit.svg";
 import ClientInfo from "../components/clients/ClientInfo.jsx";
+import delet from "../assets/svg/delete.svg";
 
 
 const Clients = () => {
@@ -15,40 +15,46 @@ const Clients = () => {
   const [line, setLine] = useState([
     {
       ID: 1112,
-      Nome: "User 1",
-      CPF: "123.456.789-10",
-      Endereco: "Rua XXXX, 5866",
-      Email: "asdsadsds@gmail.com",
+      Nome: "Peggy Sykes",
+      CPF: "123.***.***-**",
+      Endereco: "545 Broome Street, Watchtower, Washington, 9819",
+      Email: "peggysykes@comtract.com",
       Contato: "9899989-9999"
     },
     {
       ID: 1113,
-      Nome: "User 2",
-      CPF: "123.456.789-10",
-      Endereco: "Rua XXXX, 5866",
+      Nome: "Mamie Cotton",
+      CPF: "123.***.***-**",
+      Endereco: "444 Oceanview Avenue, Watrous, Arkansas, 3120",
       Email: "asdsadsds@gmail.com",
       Contato: "9899989-9999"
     },
     {
       ID: 1114,
-      Nome: "User 3",
-      CPF: "123.456.789-10",
-      Endereco: "Rua XXXX, 5866",
+      Nome: "Britney Petty",
+      CPF: "123.***.***-**",
+      Endereco: "R990 Bethel Loop, Oretta, Georgia, 6450",
       Email: "asdsadsds@gmail.com",
       Contato: "9899989-9999"
     },
     {
       ID: 1115,
-      Nome: "User 4",
-      CPF: "123.456.789-10",
-      Endereco: "Rua XXXX, 5866",
+      Nome: "Wolf Mayer",
+      CPF: "123.***.***-**",
+      Endereco: "377 Rock Street, Gibsonia, Maryland, 7184",
       Email: "asdsadsds@gmail.com",
       Contato: "9899989-9999"
     }
   ]);
 
+  const [create, setCreate] = useState(true)
+
+  const UpdateInfo = ()=>{
+    setCreate(!create);
+  }
+
   return (
-      <section className="container-fluid d-block p-0 overflow-auto">
+      <section className="container-fluid d-block overflow-auto">
         <div className="container-fluid d-flex p-0 align-items-center justify-content-between ">
           <FindInput history={true} list={true}/>
         </div>
@@ -77,15 +83,28 @@ const Clients = () => {
                   <td>{line.Endereco}</td>
                   <td>{line.Email}</td>
                   <td>{line.Contato}</td>
-                  <td><img src={hist} alt="histórico" className="icon-size"/></td>
-                  <td><img src={edite} alt="editar cliente" className="icon-size"/></td>
+                  <td>
+                    <button className="buttonSearch"
+                      onClick={UpdateInfo}
+                    >
+                      <img src={hist} alt="Histórico do Cliente"/>
+                    </button>
+                  </td>
+                  <td>
+                    <button value="History" className="buttonSearch">
+                      <img src={delet} alt=""/>
+                    </button>
+                  </td>
                 </tr>
             ))}
             </tbody>
           </table>
         </div>
-        <div className="container route border border-0 rounded shadow-sm p-2">
-          <ClientInfo create={false}/>
+        <div className="container route border border-0 rounded shadow-sm p-2 m-0">
+          {create ?
+              <ClientInfo create={true}/>
+              :
+              <ClientInfo create={false}/>}
         </div>
 
       </section>

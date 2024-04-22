@@ -75,8 +75,8 @@ const Schedule = () => {
             <h4 className="fw-medium border-bottom fs-6">Serviços Concluídos</h4>
           </div>
         </div>
-        <div className="col schedule p-2 shadow-sm">
-          <h4 className="fw-medium fs-6 border-bottom">AGENDAMENTOS</h4>
+        <div className="col schedule shadow-sm p-0">
+          <h4 className="fw-medium fs-6 border-bottom p-2">AGENDAMENTOS</h4>
           {line.map((line) => (
               <div key={line.ID} className="col border border-1 rounded shadow-sm p-2 m-2">
                 <div className="d-flex gap-2">

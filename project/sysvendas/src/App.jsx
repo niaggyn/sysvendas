@@ -1,53 +1,28 @@
-import {BrowserRouter as Router, Route, Routes} from 'react-router-dom'
+import {useState} from "react";
 import "./styles/app.scss";
 
-import Navbar from "./components/Navbar.jsx";
-import HeaderNavbar from "./components/HeaderNavbar.jsx";
-import Dashboard from "./pages/Dashboard.jsx";
-import Sales from "./pages/Sales.jsx";
-import SalesBudget from "./components/sales/SalesBudget.jsx";
-import SalesHistory from "./components/sales/SalesHistory.jsx";
-import Service from "./pages/Service.jsx";
-import ServiceBudget from "./components/service/ServiceBudget.jsx";
-import ServiceHistory from "./components/service/ServiceHistory.jsx";
-import Clients from "./pages/Clients.jsx";
-import Profissional from "./pages/Profissional.jsx";
-import Schedule from "./pages/Schedule.jsx";
-
+import Login from "./pages/Login.jsx";
+import MainPage from "./pages/MainPage.jsx";
 
 const App = () => {
-    //const [count, setCount] = useState(0)
-    return (
-        <Router>
-            <section className="d-flex container-fluid mainBkg p-0 ">
-                <div className="d-block vh-100 start-0 asideContainer w-auto">
-                    <div>
-                        <HeaderNavbar/>
-                    </div>
-                    <div>
-                        <Navbar/>
-                    </div>
-                </div>
-                <div className="bar">|</div>
-                <div className="route container-fluid w-100 content border-0 rounded m-2 overflow-auto">
-                    <Routes>
-                        <Route exact path="/" element={<Dashboard/>}/>
-                        <Route exact path="/sales" element={<Sales/>}>
-                            <Route index path="budgetSales" element={<SalesBudget/>}/>
-                            <Route path="historySales" element={<SalesHistory/>}/>
-                        </Route>
-                        <Route exact path="/service" element={<Service/>}>
-                            <Route index path="budgetService" element={<ServiceBudget/>}/>
-                            <Route path="historyService" element={<ServiceHistory/>}/>
-                        </Route>
-                        <Route exact path="/clients" element={<Clients/>}/>
-                        <Route exact path="/pro" element={<Profissional/>}/>
-                        <Route exact path="/schedule" element={<Schedule/>}/>
-                    </Routes>
-                </div>
-            </section>
-        </Router>
-    )
+
+  const [login, setLogin] = useState(false);
+  const [username, setUsername] = useState('');
+
+  const handleLogin = (username) => {
+    setLogin(true);
+    setUsername(username);
+  };
+
+  return (
+      <>
+        {login ? (
+            <MainPage username = {username}/>
+        ) : (
+            <Login onLogin={handleLogin}/>
+        )}
+      </>
+  )
 }
 
 export default App;

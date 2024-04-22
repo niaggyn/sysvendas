@@ -5,7 +5,7 @@ import Id from "../components/Id.jsx";
 
 const Dashboard = ()=>{
     return(
-        <section className="container m-0 p-0">
+        <section className="container m-0 p-0 min-vh-100 dashboard">
           <div className="d-flex justify-content-between">
             <div className="d-block justify-content-start m-4">
               <p className="mb-0">Seja Bem-Vindo</p>
@@ -18,7 +18,6 @@ const Dashboard = ()=>{
               <DateAndTime/>
             </div>
           </div>
-          <div className="dashboard w-100 min-vh-100"></div>
         </section>
     )
 }
