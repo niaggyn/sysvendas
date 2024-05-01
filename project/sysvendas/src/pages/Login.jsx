@@ -26,7 +26,7 @@ const Login = ({ onLogin }) => {
       }
       setInterval(() => {
         onLogin(username);
-      }, 3000);
+      }, 0);
     } else {
       alert('Login falhou. Por favor, verifique suas credenciais.');
     }

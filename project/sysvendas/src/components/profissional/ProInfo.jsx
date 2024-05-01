@@ -75,7 +75,7 @@ const ProInfo = ({create}) => {
               <span className="fst-normal mb-0">Nível de Acesso:</span>
               <select className="form-select form-select-sm selectDefault text-white"
                       aria-label="Default select example">
-                <option selected>GEREN</option>
+                <option selected>ADMIN</option>
                 <option value="1">PRO1</option>
                 <option value="2">PRO2</option>
               </select>

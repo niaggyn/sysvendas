@@ -1,7 +1,7 @@
 import "../styles/pages/sales.sass"
 import "../styles/pages/clients.sass"
 
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import FindInput from "../components/FindInput.jsx";
 
 import hist from "../assets/svg/history.svg";
@@ -11,7 +11,7 @@ import delet from "../assets/svg/delete.svg";
 
 const Clients = () => {
 
-  //objeto
+/*  //objeto para teste
   const [line, setLine] = useState([
     {
       ID: 1112,
@@ -45,13 +45,21 @@ const Clients = () => {
       Email: "asdsadsds@gmail.com",
       Contato: "9899989-9999"
     }
-  ]);
+  ]);*/
 
   const [create, setCreate] = useState(true)
 
-  const UpdateInfo = ()=>{
+  const UpdateInfo = () => {
     setCreate(!create);
   }
+
+  const [clients, setClients] = useState([])
+
+  useEffect(() => {
+    fetch("http://localhost:8080/clients/clientList")
+        .then(client => client.json())
+        .then(clientList => setClients((clientList)));
+  }, []);
 
   return (
       <section className="container-fluid d-block overflow-auto">
@@ -74,18 +82,18 @@ const Clients = () => {
             </tr>
             </thead>
             <tbody>
-            {line.map((line) => (
-                <tr key={line.ID}>
+            {clients.map((clients) => (
+                <tr key={clients.id}>
                   <th scope="row"><input type="checkbox"/></th>
-                  <th>{line.ID}</th>
-                  <td>{line.Nome}</td>
-                  <td>{line.CPF}</td>
-                  <td>{line.Endereco}</td>
-                  <td>{line.Email}</td>
-                  <td>{line.Contato}</td>
+                  <th>{clients.id}</th>
+                  <td>{clients.nome}</td>
+                  <td>{clients.cpf_cnpj}</td>
+                  <td>{clients.endereco}</td>
+                  <td>{clients.email}</td>
+                  <td>{clients.contato}</td>
                   <td>
                     <button className="buttonSearch"
-                      onClick={UpdateInfo}
+                            onClick={UpdateInfo}
                     >
                       <img src={hist} alt="Histórico do Cliente"/>
                     </button>
@@ -106,7 +114,6 @@ const Clients = () => {
               :
               <ClientInfo create={false}/>}
         </div>
-
       </section>
 
   )

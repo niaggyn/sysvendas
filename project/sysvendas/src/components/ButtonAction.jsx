@@ -5,7 +5,7 @@ import print from "../assets/svg/printer.svg"
 import "../styles/components/buttonAction.sass"
 
 
-const ButtonAction = ({props1, props2, printer}) => {
+const ButtonAction = ({props1, props2, printer,action}) => {
 
   return (
       <section className="d-flex justify-content-between mt-3">
@@ -22,6 +22,7 @@ const ButtonAction = ({props1, props2, printer}) => {
         <div className="d-flex gap-2 m-1">
           <button className="btn btn-sm d-flex align-items-center border-0 buttonConfirm"
                   type="button"
+                  onClick={action}
             >
             <img src={check}/>
             <p className="p-2 m-0 fw-semibold text-white">{props1}</p>
