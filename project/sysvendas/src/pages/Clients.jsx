@@ -1,13 +1,15 @@
 import "../styles/pages/sales.sass"
 import "../styles/pages/clients.sass"
 
-import {useEffect, useState} from "react";
+import {useEffect, useState, createContext} from "react";
 import FindInput from "../components/FindInput.jsx";
 
 import hist from "../assets/svg/history.svg";
 import ClientInfo from "../components/clients/ClientInfo.jsx";
 import delet from "../assets/svg/delete.svg";
 
+
+export const ClientPage = createContext();
 
 const Clients = () => {
 
@@ -47,21 +49,29 @@ const Clients = () => {
     }
   ]);*/
 
-  const [create, setCreate] = useState(true)
+  const [create, setCreate] = useState(true);
+  const [clients, setClients] = useState([]);
+  const [isClientCreate, setIsClientCreate] = useState(false);
 
   const UpdateInfo = () => {
     setCreate(!create);
   }
 
-  const [clients, setClients] = useState([])
-
-  useEffect(() => {
+  const updateList=()=>{
     fetch("http://localhost:8080/clients/clientList")
         .then(client => client.json())
         .then(clientList => setClients((clientList)));
+  }
+
+  useEffect(() => {
+    if(isClientCreate){
+      updateList();
+    }
+    updateList();
   }, []);
 
   return (
+      <ClientPage.Provider value={isClientCreate}>
       <section className="container-fluid d-block overflow-auto">
         <div className="container-fluid d-flex p-0 align-items-center justify-content-between ">
           <FindInput history={true} list={true}/>
@@ -115,7 +125,7 @@ const Clients = () => {
               <ClientInfo create={false}/>}
         </div>
       </section>
-
+      </ClientPage.Provider>
   )
 }
 export default Clients;

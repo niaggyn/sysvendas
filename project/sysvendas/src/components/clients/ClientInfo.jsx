@@ -7,10 +7,11 @@ import ButtonAction from "../ButtonAction.jsx";
 import Id from "../Id.jsx";
 import ButtonDelete from "../ButtonDelete.jsx";
 import ClientHistory from "./ClientHistory.jsx";
-import {useState} from "react";
+import {useContext, useState} from "react";
+import {ClientPage} from "../../pages/Clients.jsx";
+const ClientInfo = ({create}) => {
 
-
-const ClientInfo = ({create,infoToCreate}) => {
+  let isClienteCreate = useContext(ClientPage);
 
   //objeto vazio para os inputs
   const client = {
@@ -19,7 +20,8 @@ const ClientInfo = ({create,infoToCreate}) => {
     cpf_cnpj: '',
     email: '',
     endereco: '',
-    contato: ''
+    contato: '',
+    created_on:''
   }
 
   const [clients, setClients] = useState([]);
@@ -42,7 +44,8 @@ const ClientInfo = ({create,infoToCreate}) => {
       }
     }).then(retorno => retorno.json())
         .then(retorno_convetido => {
-
+          setClients(retorno_convetido);
+          isClienteCreate=true;
           alert("Cliente Cadastrado com Sucesso");
           cleanForm();
         })
