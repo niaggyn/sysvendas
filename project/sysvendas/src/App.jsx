@@ -16,12 +16,12 @@ const App = () => {
 
   return (
       <>
-        <MainPage username = {username}/>
-        {/*{login ? (
+        {/*<MainPage username = {username}/>*/}
+        {login ? (
             <MainPage username = {username}/>
         ) : (
             <Login onLogin={handleLogin}/>
-        )}*/}
+        )}
       </>
   )
 }

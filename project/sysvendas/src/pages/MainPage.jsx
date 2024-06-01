@@ -18,16 +18,16 @@ const MainPage = ({username}) => {
         <section className="d-flex container-fluid mainBkg p-0 ">
           <div className="d-block vh-100 start-0 asideContainer w-auto">
             <div>
-              <HeaderNavbar/>
+              <HeaderNavbar user={username}/>
             </div>
             <div>
-              <Navbar/>
+              <Navbar />
             </div>
           </div>
           <div className="bar">|</div>
           <div className="route container-fluid w-100 content border-0 rounded m-2 overflow-auto p-0">
             <Routes>
-              <Route exact path="/" element={<Dashboard/>}/>
+              <Route exact path="/" element={<Dashboard username={username}/>}/>
               <Route exact path="/sales" element={<Sales/>}>
                 <Route index path="budgetSales" element={<SalesBudget/>}/>
                 <Route path="historySales" element={<SalesHistory/>}/>

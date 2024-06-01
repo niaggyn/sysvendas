@@ -58,7 +58,7 @@ const Clients = () => {
   }
 
   const updateList=()=>{
-    fetch("http://localhost:8080/clients/clientList")
+    fetch("http://localhost:8080/client/clientList")
         .then(client => client.json())
         .then(clientList => setClients((clientList)));
   }

@@ -4,33 +4,71 @@ import logo from "../assets/svg/XSYS.svg"
 import lock from "../assets/svg/lock-login.svg";
 import unlock from "../assets/svg/unlock-login.svg";
 import help from "../assets/svg/help.svg";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 
-const Login = ({ onLogin }) => {
+const Login = ({ onLogin, usernameT }) => {
 
   const [submitLogin, setSubmitLogin] = useState(false);
 
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
-  const enterLogin = () => {
-    const isAuthenticated = true;
 
-    if (isAuthenticated) {
-      setSubmitLogin(!submitLogin);
-      if (submitLogin) {
-        const insertunlockAnimation = document.getElementById("loginIn");
-        insertunlockAnimation.classList.add("lockIn");
-        const unlockAnimation = document.getElementById("loginAnimation");
-        unlockAnimation.classList.add("autorizarLogin");
-      }
+  const enterLogin = (loginAuthorized) => {
+
+    let user = document.getElementById("username").value;
+
+    setSubmitLogin(!submitLogin);
+    if (submitLogin) {
+      console.log("funcao ok");
+      const insertUnlockAnimation = document.getElementById("loginIn");
+      insertUnlockAnimation.classList.add("lockIn");
+      const unlockAnimation = document.getElementById("loginAnimation");
+      unlockAnimation.classList.add("autorizarLogin");
+
       setInterval(() => {
-        onLogin(username);
-      }, 0);
-    } else {
+        onLogin(user);
+      }, 2000);
+    }
+    if(!loginAuthorized) {
       alert('Login falhou. Por favor, verifique suas credenciais.');
     }
+
   }
+
+
+  const login = async () => {
+    let username = document.getElementById("username").value;
+    let password = document.getElementById("password").value;
+
+    const response = await fetch("http://localhost:8080/login", {
+      method: 'POST',
+      headers: new Headers({
+        "Content-Type": "application/json",
+        "Accept": "application/json",
+      }),
+      body: JSON.stringify({
+        username: username,
+        password: password
+      }),
+      credentials:'include'
+    })
+
+    console.log(response.ok);
+
+    if (response.ok) {
+      console.log("dados ok");
+      enterLogin(true);
+    }
+  }
+
+
+  useEffect(() => {
+
+    setUsername(username);
+
+  }, []);
+
 
   return (
       <section className="code d-flex">
@@ -46,13 +84,13 @@ const Login = ({ onLogin }) => {
                 <img src={unlock} className="unlockIn" id="unlockIn"/>
               </div>
               <div className="d-block container-fluid loginContainer textSizeSm">
-                <input type="text" placeholder="Usuário" className="form-control" value="User1"
+                <input type="text" placeholder="Usuário" className="form-control" value="adm1" id="username"
                        onChange={(e) => setUsername(e.target.value)}
                 />
-                <input type="password" placeholder="Senha" className="form-control" value="User1"
+                <input type="password" placeholder="Senha" className="form-control" value="senha123" id="password"
                        onKeyDown={(event) => {
                          if (event.key === "Enter") {
-                           enterLogin();
+                           login();
                            event.preventDefault();
                          }
                        }}
